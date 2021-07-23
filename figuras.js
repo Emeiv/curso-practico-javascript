@@ -32,12 +32,20 @@ console.groupEnd();
 
 // Código del círculo
 console.group("Círculos");
+// Radio círculo
 const radioCirculo = 15;
+// Diámetro círculo
 const diametroCirculo = radioCirculo * 2;
+// PI
+const PI = Math.PI;
+console.log(`El valor de PI es ${PI}.`)
+// Perímetro - Circunferencia círculo
+const perimetroCirculo = diametroCirculo * PI; 
 
 console.log(`El radio del circulo mide ${radioCirculo}cm.`);
 console.log(`El diámetro del círculo mide ${diametroCirculo}cm. `);
-
-const areaCirculo = 3.1415 * (radioCirculo * radioCirculo);
+console.log(`El perímetro del circulo es ${perimetroCirculo}cm`)
+// Área círculo.
+const areaCirculo = PI * (radioCirculo * radioCirculo);
 console.log(`El área del círculo mide ${areaCirculo}cm^2.`);
 console.groupEnd();
