@@ -7,3 +7,4 @@ Ejercicios curso práctico de Javascript.
 - Segundo paso: Implementar fórmulas en javascript
 - Tercer paso: Crear funciones.
 - Cuarto paso: Integrar Javascript con HTML.
+

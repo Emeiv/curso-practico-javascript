@@ -20,6 +20,29 @@ function areaTriangulo(lado1, lado2, lado3) {
     const area = Math.sqrt(altura*((altura-lado1)*(altura-lado2)*(altura-lado3)));
     return (area);
 }
+
+function verificaIsosceles(lado1, lado2, lado3) {
+    const l1 = Number(lado1);
+    const l2 = Number(lado2);
+    const l3 = Number(lado3);
+
+    switch(l1, l2, l3) {
+        case l1 == l2:
+            console.log("Es isosceles.")
+            break;
+        case l1 == l3:
+            console.log("Es isosceles.")
+            break;
+        case l2 == l3:
+            console.log("Es isosceles.")
+            break;
+        default:
+            console.log("No es isosceles.") 
+    }
+
+
+
+}
 console.groupEnd();
 
 // Código del círculo
