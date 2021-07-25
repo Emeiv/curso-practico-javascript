@@ -22,15 +22,15 @@ function areaTriangulo(lado1, lado2, lado3) {
 }
 
 // Función para verificar si un triángulo es "Equilatero(3), Isósceles(2) o Escaleno(0)"
-function verificaTriangulo(lado1, lado2, lado3) {
+function verificaTriangulo(lado1, lado2, base) {
     const l1 = Number(lado1);
     const l2 = Number(lado2);
-    const l3 = Number(lado3);
+    const l3 = Number(base);
     let resultado;
 
-    if (lado1 === lado2 && lado2 === lado3) {
+    if (l1 === l2 && l2 === l3) {
         resultado = 3;
-    } else if (lado1 != lado2 && lado1 != lado3 && lado2 != lado3) {
+    } else if (l1 != l2 && l1 != l3 && l2 != l3) {
         resultado = 0;        
     } else {
         resultado = 2;
