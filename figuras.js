@@ -21,28 +21,23 @@ function areaTriangulo(lado1, lado2, lado3) {
     return (area);
 }
 
-function verificaIsosceles(lado1, lado2, lado3) {
+// Función para verificar si un triángulo es "Equilatero(3), Isósceles(2) o Escaleno(0)"
+function verificaTriangulo(lado1, lado2, lado3) {
     const l1 = Number(lado1);
     const l2 = Number(lado2);
     const l3 = Number(lado3);
+    let resultado;
 
-    switch(l1, l2, l3) {
-        case l1 == l2:
-            console.log("Es isosceles.")
-            break;
-        case l1 == l3:
-            console.log("Es isosceles.")
-            break;
-        case l2 == l3:
-            console.log("Es isosceles.")
-            break;
-        default:
-            console.log("No es isosceles.") 
+    if (lado1 === lado2 && lado2 === lado3) {
+        resultado = 3;
+    } else if (lado1 != lado2 && lado1 != lado3 && lado2 != lado3) {
+        resultado = 0;        
+    } else {
+        resultado = 2;
     }
-
-
-
+    alert(resultado);
 }
+
 console.groupEnd();
 
 // Código del círculo
