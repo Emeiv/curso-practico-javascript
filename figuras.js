@@ -21,6 +21,11 @@ function areaTriangulo(lado1, lado2, lado3) {
     return (area);
 }
 
+function alturaTriangulo(lado1, lado2, base) {
+    const altura = (Number(lado1) + Number(lado2) + Number(base))/2;
+    return altura
+}
+
 // Función para verificar si un triángulo es "Equilatero(3), Isósceles(2) o Escaleno(0)"
 function verificaTriangulo(lado1, lado2, base) {
     const l1 = Number(lado1);
@@ -35,7 +40,25 @@ function verificaTriangulo(lado1, lado2, base) {
     } else {
         resultado = 2;
     }
-    alert(resultado);
+    return(resultado);
+}
+
+// Función para calcular la altura de un triángulo y dar el tipo de triángulo
+function alturaYTipoTriangulo (lado1, lado2, base) {
+    const tipoTriangulo = verificaTriangulo(lado1, lado2, base);
+     if (tipoTriangulo == 0) {
+         const respuestaTipo = alturaTriangulo(lado1, lado2, base);
+         alert(`Tu triángulo es escaleno y su altura es ${respuestaTipo}`)
+     } else if ( tipoTriangulo == 2) {
+        const respuestaTipo = alturaTriangulo(lado1, lado2, base);
+        alert(`Tu triángulo es isosceles y su altura es ${respuestaTipo}`)
+
+     } else {
+        const respuestaTipo = alturaTriangulo(lado1, lado2, base);
+        alert(`Tu triángulo es equilatero y su altura es ${respuestaTipo}`)
+
+     }
+
 }
 
 console.groupEnd();
