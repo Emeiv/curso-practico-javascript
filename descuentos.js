@@ -13,14 +13,53 @@ function calculaPrecioFinal(precio, descuento) {
     return precioFinal;
 }
 
+function discountCoupon (coupon) {
+    const cuponDescuento = coupon;
+    switch (cuponDescuento) {
+        case "pokemon":
+            return 50;
+            break;
+        case "digimon":
+            return 30;
+            break;
+        case "":
+            return 1;
+            break;
+        default:
+            return 0;
+    }
+}
+
 function onClickButtonPriceDiscount() {
-    const inputPrice = document.getElementById("inputPrice"); // Llama elemento del HTML que corresponde al inputPrice
-    const priceValue = inputPrice.value;
-    const inputDiscount = document.getElementById("inputDiscount"); // Llama al elemento del HTML que corresponde al inputDiscount
-    const discountValue = inputDiscount.value;
+    //const inputPrice = document.getElementById("inputPrice"); // Llama elemento del HTML que corresponde al inputPrice
+    //const priceValue = inputPrice.value;
+    //const inputDiscount = document.getElementById("inputDiscount"); // Llama al elemento del HTML que corresponde al inputDiscount
+    //const discountValue = inputDiscount.value;
+    const inputCoupon = document.getElementById("inputCoupon"); 
+    const valueInputCoupon = inputCoupon.value;   
 
-    const precioConDescuento = calculaPrecioFinal(priceValue, discountValue); // Se asigna resultado de función a variable
+    const validCoupon = discountCoupon(valueInputCoupon);
+    const validCouponValue = validCoupon;
 
-    const resultP = document.getElementById("ResultP"); // Para modificar un valor de html desde javascript innertext
-    resultP.innerText = `El precio con descuento es de:  $${precioConDescuento}`;
+    if (validCouponValue >= 10) {
+        const inputPrice = document.getElementById("inputPrice"); // Llama elemento del HTML que corresponde al inputPrice
+        const priceValue = inputPrice.value;
+        const precioConDescuento = calculaPrecioFinal(priceValue, validCouponValue); // Se asigna resultado de función a variable
+        const resultP = document.getElementById("ResultP"); // Para modificar un valor de html desde javascript innertext
+        resultP.innerText = `El precio con descuento es de:  $${precioConDescuento}`;
+    } else if (validCouponValue ==  1 ) {
+        const inputPrice = document.getElementById("inputPrice"); // Llama elemento del HTML que corresponde al inputPrice
+        const priceValue = inputPrice.value;
+        const resultP = document.getElementById("ResultP"); // Para modificar un valor de html desde javascript innertext
+        resultP.innerText = `No se aplicó ningún cupón, el precio de tu artículo es de:  $${priceValue}`;
+
+    } else {
+        const resultP = document.getElementById("ResultP"); // Para modificar un valor de html desde javascript innertext
+        resultP.innerText = `Cupón no válido el precio de tu artículo no se modificó.`;
+    }
+    
+    //const precioConDescuento = calculaPrecioFinal(priceValue, couponValue); // Se asigna resultado de función a variable
+
+    //const resultP = document.getElementById("ResultP"); // Para modificar un valor de html desde javascript innertext
+    //resultP.innerText = `El precio con descuento es de:  $${precioConDescuento}`;
 }

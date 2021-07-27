@@ -19,20 +19,22 @@
     </header>
     <section>
         <h2>
-            Calcula el precio a pagar de tus productos con descuento.
+            Calcula el precio a pagar de tus productos.
         </h2>
         <form>
             <label for = "inputPrice">Escribe el precio de tu producto.</label>
             <input type = "number" id = "inputPrice" />
             
-            <label for = "inputDiscount">Escribe el descuento de tu producto.</label>
-            <input type = "number" id="inputDiscount" />
+            <!-- <label for = "inputDiscount">Escribe el descuento de tu producto.</label>
+            <input type = "number" id="inputDiscount" /> -->
+            <label for = "inputCoupon"> Si cuentas con un cupón de descuento, ingrésalo aquí. </label>
+            <input type = "text" id="inputCoupon" />
 
             <button type="button" onclick="onClickButtonPriceDiscount()">
                 Calcular el precio con descuento.
             </button>
 
-            
+
             <p id="ResultP"></p>
         </form>
 
